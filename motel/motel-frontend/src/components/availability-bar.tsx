@@ -1,0 +1,3 @@
+"use client";
+import {useState} from 'react';
+export function AvailabilityBar(){const [checkIn,setCheckIn]=useState('');return <form action="/booking" className="availability-bar"><label>Check-in<input type="date" name="checkIn" aria-label="Check-in date" required value={checkIn} onChange={e=>setCheckIn(e.target.value)}/></label><label>Check-out<input type="date" name="checkOut" aria-label="Check-out date" required min={checkIn||undefined}/></label><label>Guests<select name="guests" defaultValue="2"><option value="1">1 Guest</option><option value="2">2 Guests</option></select></label><button className="button" type="submit">Check availability</button></form>}
